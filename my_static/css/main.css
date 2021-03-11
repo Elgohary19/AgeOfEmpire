@@ -1,0 +1,108 @@
+  .header{
+    position:relative;
+
+    }
+    .banner{
+    position:relative;
+    }
+    .banner form{
+        position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    text-align:center;
+    }
+    .banner #inputbutton{
+    margin:0;}
+    .banner #butn{
+        background: transparent;
+    border: none;
+    width: 47px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        position: absolute;
+    right: 0;
+    }
+    .banner .inputstyle{
+        width: 300px;
+    padding: 1rem;
+    border: gainsboro;
+    }
+    .banner label{
+        font-size: 3rem;
+    color: #e5ddb1;
+    }
+    .search-icon{
+    height:100%;
+    width:100%;
+    object-fit:contain;
+    }
+    .logo{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;    }
+        html,body{
+        font-family: 'Cinzel', serif;
+        }
+
+td, th {
+  border: 1px solid #e5ddb1;
+  text-align: left;
+  padding: 8px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+        table{
+  word-wrap: break-word;
+    word-break: break-all;
+  color:#e5ddb1;
+width:100%;
+  word-break: break-all;
+
+        }
+
+        .form-input-con{
+            display: flex;
+    justify-content: center;
+    position: relative;
+    width: 300px;
+    margin: auto;
+        }
+        .banner form{
+            position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+        }
+table a {
+text-decoration:none;
+color:#e5ddb1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.small-header{
+width:100%;}
+.banner-img{
+    position: relative;
+    width: 100%;}
+    .table-container{
+    padding:4rem;}

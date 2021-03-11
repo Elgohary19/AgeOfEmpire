@@ -1,0 +1,99 @@
+{% load render_table from django_tables2 %}
+{% load querystring from django_tables2 %}
+{% load i18n %}
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Age of Empires</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+<style>
+    body {
+        position: relative;
+        background-image:url("{% static 'imgs/header.jpg' %}");
+    }
+
+</style>
+<body>
+    <div class="data-container">
+        <div class="header">
+            <img class="small-header" src="{% static 'imgs/small-header.jpg' %} ">
+            <a href="{% url 'main' %}"><img class="logo" src="{% static 'imgs/logo.png' %}"></a>
+        </div>
+
+<!--    All Samples-->
+        {% if unit and uni == 0 or unit and uni == 1 %}
+        <div class="banner">
+            <img class="banner-img" src="{% static 'imgs/main-img.jpg' %} ">
+            <form method="GET" action="{% url 'main' %}" class="form-inline row input-group display-flexrow"
+                  id="search">
+                {% csrf_token %}
+                <div>
+                    <label>Search By Unit Name </label>
+                    <div class="form-input-con">
+                        <input class="inputstyle" type="text" placeholder="Search By Unit Name" name="unit_name">
+                        <button type="submit" class="btn btn-primary" id="butn">
+                            <img class="search-icon" src="{% static 'imgs/search-icon.png' %}">
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+            {% render_table export_obj %}
+<!--    No Samples uploaded yet....-->
+        {% elif not unit and uni == 0 %}
+                <div class="banner">
+            <img class="banner-img" src="{% static 'imgs/main-img.jpg' %} ">
+            <form method="GET" action="{% url 'main' %}" class="form-inline row input-group display-flexrow"
+                  id="search">
+                {% csrf_token %}
+                <div>
+                    <label>Search By Unit Name </label>
+                    <div class="form-input-con">
+                        <input class="inputstyle" type="text" placeholder="Search By Unit Name" name="unit_name">
+                        <button type="submit" class="btn btn-primary" id="butn">
+                            <img class="search-icon" src="{% static 'imgs/search-icon.png' %}">
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+            <div class="jumbotron text-center" style="margin-top: 2rem; font-family: 'Cinzel', serif; text-align: center;">
+                <i  style="font-size: 10rem; margin-bottom: 1rem" class="far fa-frown"></i>
+                <h3 style="font-size: 3rem; color: #e5ddb1;" class="mb-4">No Data Returned Yet</h3>
+            </div>
+<!--    Search with no result -->
+        {% elif not unit and uni == 1 %}
+        <div class="banner">
+            <img class="banner-img" src="{% static 'imgs/main-img.jpg' %} ">
+            <form method="GET" action="{% url 'main' %}" class="form-inline row input-group display-flexrow"
+                  id="search">
+                {% csrf_token %}
+                <div>
+                    <label>Search By Unit Name </label>
+                    <div class="form-input-con">
+                        <input class="inputstyle" type="text" placeholder="Search By Unit Name" name="unit_name">
+                        <button type="submit" class="btn btn-primary" id="butn">
+                            <img class="search-icon" src="{% static 'imgs/search-icon.png' %}">
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+            <div class="jumbotron text-center" style="margin-top: 2rem; font-family: 'Cinzel', serif; text-align: center;">
+                <i  style="font-size: 10rem; margin-bottom: 1rem" class="far fa-frown"></i>
+                <h3 style="font-size: 3rem; color: #e5ddb1;" class="mb-4">No Result Found</h3>
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
